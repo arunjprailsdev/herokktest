@@ -1,0 +1,2 @@
+class Pdoduct < ApplicationRecord
+end
