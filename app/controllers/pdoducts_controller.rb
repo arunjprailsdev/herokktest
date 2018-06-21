@@ -15,6 +15,7 @@ class PdoductsController < ApplicationController
   # GET /pdoducts/new
   def new
     @pdoduct = Pdoduct.new
+
   end
 
   # GET /pdoducts/1/edit
@@ -26,6 +27,9 @@ class PdoductsController < ApplicationController
   def create
     @pdoduct = Pdoduct.new(pdoduct_params)
 
+    @testcase = TestCase.new(completed_at: Time.now)
+    @testcase.save
+    
     respond_to do |format|
       if @pdoduct.save
         format.html { redirect_to @pdoduct, notice: 'Pdoduct was successfully created.' }
