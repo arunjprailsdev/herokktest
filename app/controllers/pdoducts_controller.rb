@@ -5,7 +5,7 @@ class PdoductsController < ApplicationController
   # GET /pdoducts.json
   def index
     @pdoducts = Pdoduct.all
-    Rails.logger.info "#{Time.now}"
+    Rails.logger.info "This is rails logger #{Time.now}"
   end
 
   # GET /pdoducts/1
