@@ -5,6 +5,7 @@ class PdoductsController < ApplicationController
   # GET /pdoducts.json
   def index
     @pdoducts = Pdoduct.all
+    Rails.logger.info "#{Time.now}"
   end
 
   # GET /pdoducts/1
@@ -29,7 +30,7 @@ class PdoductsController < ApplicationController
 
     @testcase = TestCase.new(completed_at: Time.now)
     @testcase.save
-    
+
     respond_to do |format|
       if @pdoduct.save
         format.html { redirect_to @pdoduct, notice: 'Pdoduct was successfully created.' }
